@@ -10,6 +10,11 @@ function Header() {
       <div className='container'>
         <img src={hero} alt='man looking at phone' className='hero-image' />
         <img src={logo} alt='strategycorp logo' className='logo-header' />
+        <h1 className='heading'>
+          Drive Today’s <br /> Marketing Efforts <br />
+          in Style
+        </h1>
+        <h3 className='date'>December 1, 2020 | 1PM CT</h3>
       </div>
     </div>
   );
