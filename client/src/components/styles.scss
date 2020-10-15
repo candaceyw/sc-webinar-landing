@@ -40,3 +40,30 @@
     font-size: 1.75vw;
   }
 }
+
+.Countdown {
+  // top: 68%;
+  margin: -65px auto;
+  padding-bottom: 20px;
+  position: absolute;
+  width: 100%;
+}
+
+.Countdown-col {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.5%;
+  margin: 0.3%;
+}
+
+.Countdown-col-element {
+  display: inline-block;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Countdown-col-element strong {
+  font-size: 50px;
+}
