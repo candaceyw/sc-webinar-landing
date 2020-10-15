@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import { Header, Body, About, Countdown } from './components/index';
+// import './App.css';
+import { Header, Body, About, Countdown, Form } from './components/index';
 import './components/styles.scss';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
     <div className='App'>
       <Header />
       <Countdown date={`${year}-12-01T00:00:00`} />
+      <Form />
       {/* <Body />
       <About /> */}
     </div>

@@ -1,6 +1,44 @@
 // body {
 //   max-width: 1366px;
 // }
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .top-bar {
   width: 100%;
@@ -41,12 +79,15 @@
   }
 }
 
+//*******  COUNTDOWN STYLING
+
 .Countdown {
   // top: 68%;
   margin: -65px auto;
   padding-bottom: 20px;
   position: absolute;
   width: 100%;
+  z-index: 1000;
 }
 
 .Countdown-col {
@@ -66,4 +107,65 @@
 
 .Countdown-col-element strong {
   font-size: 50px;
+}
+
+//*******  FORM STYLING
+
+.form {
+  background-color: white;
+  padding: 1vw;
+  width: 25vw;
+  position: absolute;
+  top: 5vw;
+  right: 10vw;
+  &__group:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    font-size: 0.75rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    background-color: rgba(white, 0.5);
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0.5rem 1rem rgba(black, 0.1);
+      border-bottom: 3px solid #eb6e1f;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid #eb6e1f;
+    }
+
+    &::-webkit-input-placeholder {
+      color: black;
+    }
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 1rem;
+    margin-top: 0.6rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3rem);
+  }
+}
+
+.heading-secondary {
+  color: #eb6e1f;
 }
