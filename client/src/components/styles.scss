@@ -295,10 +295,54 @@
   }
 }
 
+// ******  BODY CONTAINER
+.body-container {
+  margin: 6% 30%;
+
+  .body-top {
+    line-height: 2rem;
+  }
+
+  .body-headline {
+    font-size: 2.5rem;
+    color: #eb6e1f;
+  }
+
+  .body-bottom {
+    line-height: 2rem;
+  }
+}
+
+// ******  ABOUT CONTAINER
+
+.about-container {
+  background-color: #eb6e1f;
+  color: white;
+  padding: 5% 20%;
+
+  .about-flex {
+    display: flex;
+
+    p.about-text {
+      margin: 1% 7%;
+      line-height: 2rem;
+      text-align: left;
+      width: 60%;
+    }
+  }
+}
+
+img.headshot {
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+}
+// ******  FOOTER CONTAINER
+
 .bottom-bar {
   width: 100%;
   height: 100px;
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   background-color: black;
 
@@ -306,10 +350,10 @@
     width: 20%;
     // margin: 0;
     // margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    // position: absolute;
+    // bottom: 0%;
+    // -ms-transform: translateY(-50%);
+    // transform: translateY(-50%);
     left: 40%;
   }
 }

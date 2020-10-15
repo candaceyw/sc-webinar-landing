@@ -2,16 +2,22 @@ import React from 'react';
 
 function Body() {
   return (
-    <div>
-      <p>
+    <div className='body-container'>
+      <h3 className='body-top'>
         Digital banking for consumers and human banking for business are both on
-        the rise and more important than ever. Join StrategyCorps partner Dave
-        DeFazio as he shows you how to use content, connection, conversion, and
+        the rise and more important than ever.{' '}
+      </h3>
+
+      <h2 className='body-headline'>
+        Join StrategyCorps partner <br /> Dave DeFazio{' '}
+      </h2>
+      <h3 className='body-top'>
+        as he shows you how to use content, connection, conversion, and
         campaigns to reach your desired audience and turn prospects into
         customers.
-      </p>
+      </h3>
 
-      <p>
+      <p className='body-bottom'>
         During this live webinar, you’ll learn why content is the lead for all
         your campaigns. Dave will tell you why you should consider building a
         content site outside of your bank.com or .bank site, teach you how to

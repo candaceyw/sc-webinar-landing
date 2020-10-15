@@ -1,6 +1,13 @@
 import React from 'react';
 
-import { Header, Countdown, Form, Footer } from './components/index';
+import {
+  Header,
+  Countdown,
+  Form,
+  Body,
+  About,
+  Footer,
+} from './components/index';
 import './components/styles.scss';
 
 function App() {
@@ -15,6 +22,8 @@ function App() {
       <Header />
       <Countdown date={`${year}-12-01T00:00:00`} />
       <Form />
+      <Body />
+      <About />
       <Footer />
     </div>
   );
