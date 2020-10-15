@@ -52,7 +52,7 @@
   .hero-image {
     width: 130%;
     border-bottom: 4px solid #eb6e1f;
-    @media (max-width: 1250px) {
+    @media (max-width: 1300px) {
       width: 140%;
     }
 
@@ -96,7 +96,7 @@
   width: 100%;
   z-index: 1000;
 
-  @media (max-width: 1250px) {
+  @media (max-width: 1300px) {
     margin: -50px auto;
   }
   @media (max-width: 1250px) {
