@@ -53,6 +53,7 @@
     // width: 100vw;
     position: relative;
     object-fit: cover;
+    height: 75%;
     // left: 50%;
     // right: 50%;
     margin-left: -50vw;
@@ -85,10 +86,26 @@
 
   .date {
     position: absolute;
-    top: 75%;
+    top: 65%;
     left: 10%;
     color: white;
     font-size: 1.75vw;
+
+    @media (min-width: 1600px) {
+      top: 75%;
+    }
+    @media (max-width: 1500px) {
+      top: 60%;
+    }
+
+    @media (max-width: 1300px) {
+      top: 60%;
+      font-size: 2vw;
+    }
+    @media (max-width: 1300px) {
+      font-size: 2vw;
+      top: 60%;
+    }
   }
 }
 
