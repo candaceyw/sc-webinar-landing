@@ -49,6 +49,8 @@
 	}
 }
 
+// ***** HEADING CONTAINER
+
 .container {
 	position: relative;
 
@@ -57,14 +59,9 @@
 		position: relative;
 		object-fit: cover;
 		height: 75%;
-		// left: 50%;
-		// right: 50%;
 		margin-left: -50vw;
 		margin-right: -50vw;
 		border-bottom: 4px solid #eb6e1f;
-		// @media (max-width: 10px) {
-		//   width: 140%;
-		// }
 
 		@media (min-width: 1930px) {
 			width: 100vw;
@@ -74,11 +71,11 @@
 	.logo-header {
 		position: absolute;
 		top: 10%;
-		left: 5%;
+		left: 10%;
 		width: 20%;
 
 		@media (max-width: 900px) {
-			margin-left: 25vw;
+			margin-left: 20vw;
 			margin-right: -200vw;
 			width: 35%;
 		}
@@ -189,7 +186,7 @@
 	padding: 1vw;
 	width: 30vw;
 	position: absolute;
-	top: 5vw;
+	top: 4vw;
 	right: 8vw;
 	box-shadow: 0 0.5rem 1rem rgba(black, 0.2);
 
@@ -201,7 +198,7 @@
 		position: relative;
 		right: -10vw;
 		box-shadow: none;
-		margin-top: 5%;
+		margin-top: 10%;
 		margin-bottom: 5%;
 	}
 
@@ -406,6 +403,7 @@
 			@media (max-width: 900px) {
 				width: 100%;
 				margin: 1%;
+				text-align: center;
 			}
 		}
 	}
