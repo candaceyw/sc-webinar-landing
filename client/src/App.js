@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <Countdown date={`${year}-12-01T00:00:00`} />
+      <Countdown date={`${year}-12-01T13:00:00`} />
       <Form />
       <Body />
       <About />
