@@ -5,50 +5,28 @@ export const START = 'START';
 export const SUCCESS = 'SUCCESS';
 export const FAIL = 'FAIL';
 
-// Get All Launches data
-export const getReg = () => (dispatch) => {
-	dispatch({ type: START });
+// add registration
+export const addReg = (registration) => async (dispatch) => {
+	try {
+		// setLoading();
 
-	axios
-		.get('https://sc-webinar.herokuapp.com/registration')
-		.then((res) => {
-			console.log('res', res.data);
-
-			dispatch({
-				type: SUCCESS,
-				payload: res.data,
-			});
-		})
-		.catch((err) => {
-			console.log('err', err);
-
-			dispatch({
-				type: FAIL,
-				payload: err,
-			});
+		const res = await fetch('https://sc-webinar.herokuapp.com/registration', {
+			method: 'POST',
+			body: JSON.stringify(registration),
+			headers: {
+				'Content-Type': 'application/json',
+			},
 		});
-};
+		const data = await res.json();
 
-// Get Next Launch data
-export const addReg = () => (dispatch) => {
-	dispatch({ type: START });
-
-	axios
-		.post('https://sc-webinar.herokuapp.com/registration')
-		.then((res) => {
-			console.log('NEXT res', res.data);
-
-			dispatch({
-				type: SUCCESS,
-				payload: res.data,
-			});
-		})
-		.catch((err) => {
-			console.log('err', err);
-
-			dispatch({
-				type: FAIL,
-				payload: err,
-			});
+		dispatch({
+			type: ADD_REG,
+			payload: data,
 		});
+	} catch (err) {
+		dispatch({
+			type: FAIL,
+			payload: err.response.statusText,
+		});
+	}
 };

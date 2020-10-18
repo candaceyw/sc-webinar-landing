@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addReg } from '../store/actions';
+import PropTypes from 'prop-types';
 
 const Form = ({ addReg }) => {
 	const [firstName, setFirstName] = useState('');
@@ -146,5 +147,8 @@ const Form = ({ addReg }) => {
 	);
 };
 
+Form.propTypes = {
+	addReg: PropTypes.func.isRequired,
+};
 // export default Form;
 export default connect(null, { addReg })(Form);
