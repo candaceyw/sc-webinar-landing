@@ -1,8 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addReg } from '../store/actions';
 
-const Form = () => {
+const Form = ({ addReg }) => {
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [email, setEmail] = useState('');
+	const [institution, setInstitution] = useState('');
+	const [title, setTitle] = useState('');
+	const [state, setState] = useState('');
+
+	const handleSubmit = () => {
+		if (
+			firstName === '' ||
+			lastName === '' ||
+			institution === '' ||
+			email === ''
+		) {
+			alert({ html: 'Please enter the first and last name' });
+		} else {
+			addReg({
+				firstName,
+				lastName,
+				email,
+				institution,
+				title,
+				state,
+			});
+			setFirstName('');
+			setLastName('');
+			setEmail('');
+			setInstitution('');
+			setTitle('');
+			setState('');
+		}
+	};
+
 	return (
-		<form action='#' className='form'>
+		<form action='#' className='form' onSubmit={handleSubmit}>
 			<div className='u-margin-bottom-medium'>
 				<h2 className='heading-secondary'>RESERVE YOUR SEAT TODAY!</h2>
 			</div>
@@ -12,10 +47,12 @@ const Form = () => {
 					type='text'
 					className='form__input'
 					placeholder='First Name'
-					id='first-name'
+					id='firstName'
 					required
+					onChange={(e) => setFirstName(e.target.value)}
+					value={firstName}
 				/>
-				<label for='name' className='form__label'>
+				<label htmlFor='firstName' className='form__label'>
 					First Name
 				</label>
 			</div>
@@ -25,10 +62,12 @@ const Form = () => {
 					type='text'
 					className='form__input'
 					placeholder='Last Name'
-					id='last-name'
+					id='lastName'
 					required
+					onChange={(e) => setLastName(e.target.value)}
+					value={lastName}
 				/>
-				<label for='name' className='form__label'>
+				<label htmlFor='lastName' className='form__label'>
 					Last Name
 				</label>
 			</div>
@@ -40,8 +79,12 @@ const Form = () => {
 					placeholder='Email Address'
 					id='email'
 					required
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+
+					// value={register.email}
 				/>
-				<label for='email' className='form__label'>
+				<label htmlFor='email' className='form__label'>
 					Email Address
 				</label>
 			</div>
@@ -51,10 +94,13 @@ const Form = () => {
 					type='text'
 					className='form__input'
 					placeholder='Financial Institution'
-					id='name'
+					id='institution'
 					required
+					// value={register.institution}
+					onChange={(e) => setInstitution(e.target.value)}
+					value={institution}
 				/>
-				<label for='name' className='form__label'>
+				<label htmlFor='institution' className='form__label'>
 					Financial Institution
 				</label>
 			</div>
@@ -64,9 +110,13 @@ const Form = () => {
 					type='text'
 					className='form__input'
 					placeholder='Title'
-					id='name'
+					id='title'
+					value={title}
+					onChange={(e) => setTitle(e.target.value)}
+
+					// value={register.title}
 				/>
-				<label for='name' className='form__label'>
+				<label htmlFor='title' className='form__label'>
 					Title
 				</label>
 			</div>
@@ -76,18 +126,25 @@ const Form = () => {
 					type='text'
 					className='form__input'
 					placeholder='State'
-					id='name'
+					id='state'
+					value={state}
+					onChange={(e) => setState(e.target.value)}
+
+					// value={register.state}
 				/>
-				<label for='name' className='form__label'>
+				<label htmlFor='state' className='form__label'>
 					State
 				</label>
 			</div>
 
 			<div className='form__group'>
-				<button className='btn btn--orange'>Submit</button>
+				<button className='btn btn--orange' type='submit'>
+					Submit
+				</button>
 			</div>
 		</form>
 	);
 };
 
-export default Form;
+// export default Form;
+export default connect(null, { addReg })(Form);
