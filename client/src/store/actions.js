@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const ADD_REG = 'ADD_REG';
 export const START = 'START';
 export const SUCCESS = 'SUCCESS';
