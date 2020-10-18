@@ -12,7 +12,7 @@ const Form = ({ addReg }) => {
 	const [state, setState] = useState('');
 
 	const handleSubmit = () => {
-		alert(`${firstName}, you have been registered!`);
+		alert(`${firstName}, you have been registered! See you on December 1.`);
 
 		addReg({
 			firstName,
