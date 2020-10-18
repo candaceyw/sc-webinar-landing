@@ -2,8 +2,6 @@ import { START, SUCCESS, ADD_REG } from './actions';
 
 const initialState = {
 	data: '',
-	// isFetching: false,
-	// error: '',
 };
 
 export default (state = initialState, action) => {

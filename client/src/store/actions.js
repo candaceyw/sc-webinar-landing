@@ -6,8 +6,6 @@ export const FAIL = 'FAIL';
 // add registration
 export const addReg = (registration) => async (dispatch) => {
 	try {
-		// setLoading();
-
 		const res = await fetch('https://sc-webinar.herokuapp.com/registration', {
 			method: 'POST',
 			body: JSON.stringify(registration),

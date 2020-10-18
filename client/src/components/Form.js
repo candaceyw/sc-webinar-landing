@@ -12,29 +12,23 @@ const Form = ({ addReg }) => {
 	const [state, setState] = useState('');
 
 	const handleSubmit = () => {
-		if (
-			firstName === '' ||
-			lastName === '' ||
-			institution === '' ||
-			email === ''
-		) {
-			alert({ html: 'Please enter the first and last name' });
-		} else {
-			addReg({
-				firstName,
-				lastName,
-				email,
-				institution,
-				title,
-				state,
-			});
-			setFirstName('');
-			setLastName('');
-			setEmail('');
-			setInstitution('');
-			setTitle('');
-			setState('');
-		}
+		alert(`${firstName} You have been registered!`);
+
+		addReg({
+			firstName,
+			lastName,
+			email,
+			institution,
+			title,
+			state,
+		});
+
+		setFirstName('');
+		setLastName('');
+		setEmail('');
+		setInstitution('');
+		setTitle('');
+		setState('');
 	};
 
 	return (
@@ -82,8 +76,6 @@ const Form = ({ addReg }) => {
 					required
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-
-					// value={register.email}
 				/>
 				<label htmlFor='email' className='form__label'>
 					Email Address
@@ -97,7 +89,6 @@ const Form = ({ addReg }) => {
 					placeholder='Financial Institution'
 					id='institution'
 					required
-					// value={register.institution}
 					onChange={(e) => setInstitution(e.target.value)}
 					value={institution}
 				/>
@@ -114,8 +105,6 @@ const Form = ({ addReg }) => {
 					id='title'
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
-
-					// value={register.title}
 				/>
 				<label htmlFor='title' className='form__label'>
 					Title
@@ -130,8 +119,6 @@ const Form = ({ addReg }) => {
 					id='state'
 					value={state}
 					onChange={(e) => setState(e.target.value)}
-
-					// value={register.state}
 				/>
 				<label htmlFor='state' className='form__label'>
 					State
@@ -150,5 +137,5 @@ const Form = ({ addReg }) => {
 Form.propTypes = {
 	addReg: PropTypes.func.isRequired,
 };
-// export default Form;
+
 export default connect(null, { addReg })(Form);
